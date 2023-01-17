@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #product_page
+    {
+        display: flex;
+    }
+    #laptop
+    {
+        color: #c45500;
+    }
+    #product_no
+    {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 2px;
+    }
+    #star>span
+    {
+        color: #c45500;
+        font-size: 26px;
+    }
+    #star:hover
+    {
+        color: #c45500;
+    }
+    #star
+    {
+        font: small
+    }
+    #price>div:hover
+    {
+        color: #c45500;
+    }
+    #max
+    {
+        width: 50px;
+        height: 20px;
+    }
+    #min
+    {
+        width: 50px;
+        height: 20px;
+    }
+    #go_btn
+    {
+        padding: 7px 5px;
+        border-radius: 8px;
+        border: 1px solid grey;
+    }
+    #deliverbyday>input:hover
+    {
+         color: #c45500;
+    }
+    #product_card
+    {
+        border: 1px solid red;
+        display: flex;
+        padding: 5px;
+    }
+     #filter_bar
+     {
+        width: 400px;
+     }
+     #sale
+     {
+        background-color: #c45500;
+        padding: 3px;
+        color: black;
+     }
+     #product_image
+     {
+        width: 550px;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin: 5px;
+        background-color: #f8f8f8;
+     }
+     #price>span
+     {
+          font-size: xx-small;
+     }
+     #price
+     {
+        font-size: larger;
+     }
+     #alexa:hover
+     {
+        color: #c45500;
+     }
+     #time>span
+     {
+        font-weight: bolder;
+     }
+</style>
+<div id="product_no"><p>1-16 of over 8,000 results for <span id="laptop">"laptop"</span></p></div>
+<br/>
+<div id="product_page">
+      <!-- filter-menu -->
+    <div id="filter_bar">
+         <!-- Delivery date -->
+        <div class="checkbox" id="deliverbyday">
+                    <p>Delivery Day</p>
+                    <input type ="checkbox" value="1">Get it Today</input>
+                    <br/>
+                    <input type ="checkbox" value="2">Get it by Tomorrow</input>
+                    <br/>
+                    <input type ="checkbox" value="3">Get it in 2 days</input>
+                    <br/>
+        </div>
+
+        <!-- Filter Category -->
+        <div class="filter_category" id="category">
+                    <p>Category</p>
+                    <p>laptop</p>
+                    <p>Traditional Laptops</p>
+        </div>
+        <!-- Customer Review -->
+        <div class="customer_review" id="review">
+            <p>Customer Review</p>
+            <div id="star"><span>&#9733&#9733&#9733&#9733&#9734</span> & Up</div>
+            <div id="star"><span>&#9733&#9733&#9733&#9734&#9734</span> & Up</div>
+            <div id="star"><span>&#9733&#9733&#9734&#9734&#9734</span> & Up</div>
+            <div id="star"><span>&#9733&#9734&#9734&#9734&#9734</span> & Up</div>
+            <!-- solid star &#9733 -->
+            <!-- half star   &#xf123 -->
+            <!-- empty star &#9734 -->
+        </div>
+        <!-- Brand -->
+        <div class="checkbox" id="brand">
+                    <p>Brand</p>
+                    <input type ="checkbox" value="1">HP</input>
+                    <br/>
+                    <input type ="checkbox" value="2">ASUS</input>
+                    <br/>
+                    <input type ="checkbox" value="3">Lenevo</input>
+                    <br/>
+                    <input type ="checkbox" value="4">Acer</input>
+                    <br/>
+                    <input type ="checkbox" value="5">Dell</input>
+                    <br/>
+                    <input type ="checkbox" value="6">Honor</input>
+                    <br/>
+                    <input type ="checkbox" value="7">MI</input>
+                    <br/>
+        </div>
+        <!-- Price -->
+        <div class="price" id="price">
+             <p>Price Desktop</p>
+             <div>Under ₹20,000</div>
+             <div>₹20,000 - ₹30,000</div>
+             <div>₹30,000 - ₹40,000</div>
+             <div>₹40,000 - ₹50,000</div>
+             <div>Over ₹50,000</div>
+             <br/>
+             <input type="number" name="max" id="max" placeholder="₹ Min">
+             <input type="number" name="min" id="min" placeholder="₹ Max">
+             <button id="go_btn">Go</button>
+        </div>
+    </div>
+
+    <!-- product description -->
+    <div id="product_div">
+        <!-- <div id="product_card">
+           <div id="product_image">
+              <img src="https://m.media-amazon.com/images/I/81zoyHn5uJL._AC_UY218_.jpg">
+           </div>
+           <div id="product_desc">
+            <h4 id="product_name">HP 14s, 11th Gen Intel Core i3-1115G4, 8GB RAM/256GB SSD 14-inch(35.6 cm) Micro-Edge, Anti-Glare, FHD Laptop/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/ MSO 2021/1.41 Kg, 14s-dy2507TU</h4>
+            <p id="star"><span>&#9733&#9733&#9733&#9733&#9734</span></p>
+            <span id="sale">Republic Day Sale</span>
+            <h3 id="price"><span>₹</span>34,900</h3>
+            <p id="time">Get it as soon as <span>Today 4 PM - 8 PM</span></p>
+            <p id="delivery">FREE Delivery by Amazon</p>
+            <p id="alexa">Alexa Built-in</p>
+            <p id="service">Available Services: Device Set-up</p>
+           </div>
+        </div> -->
+    </div>
+
+</div>   
+</body>
+</html>
+<script>
+    displayCard()
+    function displayCard()
+    {
+        let product_div=document.getElementById("product_div");
+        let product_card=document.createElement("div");
+        product_card.setAttribute("id", "product_card");
+        let product_image=document.createElement("div");
+        product_image.setAttribute("id", "product_image");
+        let img=document.createElement("img")
+        img.src="https://m.media-amazon.com/images/I/81zoyHn5uJL._AC_UY218_.jpg"
+        product_image.append(img)
+        let product_desc= document.createElement("div")
+        product_desc.setAttribute("id", "product_desc")
+        let product_name= document.createElement("h4")
+        product_name.innerText="HP 14s, 11th Gen Intel Core i3-1115G4, 8GB RAM/256GB SSD 14-inch(35.6 cm) Micro-Edge, Anti-Glare, FHD Laptop/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/ MSO 2021/1.41 Kg, 14s-dy2507TU"
+        let star=document.createElement("p")
+        star.setAttribute("id", "star")
+        let span = document.createElement("span")
+        span.innerText = "&#9733 &#9733 &#9733 &#9733 &#9734"
+        star.append(span)
+        let time=document.createElement("p")
+        time.setAttribute("id", "time")
+        time.innerText="Get it as soon as Today 4 PM - 8 PM"
+        let delivery=document.createElement("p") 
+        delivery.setAttribute("id", "time")
+        delivery.innerText="FREE Delivery by Amazon"
+        let alexa =document.createElement("p")
+        alexa.setAttribute("id", "time")
+        alexa.innerText="Alexa Built-in"
+        let service =document.createElement("p")
+        service.setAttribute("id", "time")
+        service.innerText="Available Services: Device Set-up"
+        product_desc.append(product_name,star,time,delivery,alexa,service)
+        product_card.append(product_image,product_desc)
+        product_div.append(product_card)
+
+    }
+</script>
