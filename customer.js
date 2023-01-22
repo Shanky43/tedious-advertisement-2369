@@ -16,11 +16,12 @@ burger.addEventListener("click", () => {
   }
 });
 let tbody = document.getElementById("tbody");
-let UserData = JSON.parse(localStorage.getItem("User")) || [];
+let UserData = JSON.parse(localStorage.getItem("cart")) || [];
 appender();
 function appender() {
+  console.log(UserData);
   let mappedData = UserData.map((item) =>
-    cardMaker(item.name, item.email, item.password)
+    cardMaker(item.Username, item.email, item.password)
   ).join("");
   tbody.innerHTML = mappedData;
 }

@@ -63,7 +63,28 @@ new Chart(ctx1, {
 });
 let ProductsData = JSON.parse(localStorage.getItem("Products")) || [];
 let totalProducts = document.getElementById("totalProducts");
+
+// let url = "https://gorgeous-teal-dress.cyclic.app/productdata";
+// fetch(url)
+//   .then((res) => {
+//     return res.json();
+//   })
+//   .then((data) => {
+//     totalProducts.textContent = data.length;
+//   });
+
 totalProducts.textContent = ProductsData.length;
-let UserData = JSON.parse(localStorage.getItem("User")) || [];
+
+// Total Customer
+let UserData = JSON.parse(localStorage.getItem("allUserDatas")) || [];
+
 let CustomerBox = document.getElementById("CustomerBox");
 CustomerBox.textContent = UserData.length;
+let order = document.getElementById("order");
+let User = JSON.parse(localStorage.getItem("allUserDatas")) || [];
+
+let sum = 0;
+for (let i = 0; i <= User.length - 1; i++) {
+  sum += User[i].productPurchased.length;
+  order.textContent = sum;
+}

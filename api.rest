@@ -1,37 +1,11 @@
-####
-
-GET https://63c71d3cd307b76967472ac6.mockapi.io/products
-
+GET https://gorgeous-teal-dress.cyclic.app/order
 
 ###
-POST https://63c71d3cd307b76967472ac6.mockapi.io?/products
-Content-Type:application/json
-
-  {
-    "title": "Oriental Concrete Towels",
-    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-    "price": "406.00",
-    "discountPercentage": "110.00",
-    "rating": "638",
-    "brand": "Handcrafted Frozen Hat",
-    "id": "50"
-  }
-
-
-
-###
-POST https://63c71d3cd307b76967472ac6.mockapi.io/products/1
+POST  https://gorgeous-teal-dress.cyclic.app/order
 Content-Type: application/json
 
 {
-      "id": 20,
-      "title": "OnePlus 10T 5G",
-      "description": "(Moonstone Black, 16GB RAM, 256GB Storage)",
-      "price": "55,999",
-      "discountPercentage": 36,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "OnePlus",
-      "category": "smartphones",
-      "images": "https://m.media-amazon.com/images/I/413c3ZnFLxL._SX300_SY300_QL70_FMwebp_.jpg"
-    }
+    "name":"Sagar",
+    "product":"Royal Stag",
+    "amount":"1050"    
+}

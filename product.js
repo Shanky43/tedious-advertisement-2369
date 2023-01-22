@@ -70,7 +70,7 @@ let desc = document.getElementById("desc");
 let imageURL = document.getElementById("imageURL");
 let price = document.getElementById("price");
 let category = document.getElementById("select");
-let ProductsData = JSON.parse(localStorage.getItem("Products")) || [];
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let obj = {
@@ -80,8 +80,9 @@ form.addEventListener("submit", (e) => {
     price: price.value,
     category: category.value,
   };
-  ProductsData.push(obj);
-  localStorage.setItem("Products", JSON.stringify(ProductsData));
+
+  // storeData(obj);
+  local(obj);
   alert("Product Added");
   title.value = null;
   desc.value = null;
@@ -89,3 +90,18 @@ form.addEventListener("submit", (e) => {
   price.value = null;
 });
 //
+// For API
+function storeData(Product) {
+  let url = "https://gorgeous-teal-dress.cyclic.app/productdata";
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(Product),
+  });
+}
+// For Local Storage
+let ProductsData = JSON.parse(localStorage.getItem("Products")) || [];
+function local(obj) {
+  ProductsData.push(obj);
+  localStorage.setItem("Products", JSON.stringify(ProductsData));
+}

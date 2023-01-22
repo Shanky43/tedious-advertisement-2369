@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DashBoard</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <title>Buyers</title>
+    <link rel="stylesheet" href="buyer.css" />
     <link rel="shortcut icon" href="./download.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/product.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,45 +61,23 @@
           src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982132620/amazon-unbound-9781982132620_hr.jpg"
           alt="" />
       </div>
-      <section id="DashBoardDiv">
-        <div id="GraphBox">
-          <div class="box1">
-            <canvas id="myChart"></canvas>
-          </div>
-          <div class="box2">
-            <canvas id="myChart1"></canvas>
-          </div>
-        </div>
-
-        <div id="btmContainer">
-          <div class="btmbox">
-            <h3>Total Products</h3>
-            <div>
-              <h1 id="totalProducts">400</h1>
-            </div>
-          </div>
-          <div class="btmbox">
-            <h3>Total Sales</h3>
-            <div>
-              <h1>400</h1>
-            </div>
-          </div>
-          <div class="btmbox">
-            <h3>Total Customer</h3>
-            <div>
-              <h1 id="CustomerBox">400</h1>
-            </div>
-          </div>
-          <div class="btmbox">
-            <h3>Total Orders</h3>
-            <div>
-              <h1 id="order">400</h1>
-            </div>
-          </div>
+      <section id="CustomerDiv">
+        <div id="tableBox">
+          <table id="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
         </div>
       </section>
     </div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
-  <script src="dashboard.js"></script>
+
+  <script src="./buyer.js"></script>
 </html>

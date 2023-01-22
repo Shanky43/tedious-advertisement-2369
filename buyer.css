@@ -138,52 +138,29 @@
 }
 /* Table */
 
-#tableBox {
-  display: flex;
-}
-
 #table {
   /* border: 1px solid; */
   padding: 10px;
   border-right: 1px solid var(--grey);
-
+  width: 100%;
   color: var(--orange);
 }
 #table tr th {
   /* border: 1px solid; */
-  padding: 0px 100px;
+  padding: 0px 25px;
   font-size: 23px;
   color: var(--grey);
   /* border: 1px solid; */
   padding-bottom: 5px;
-  border-bottom: 1px solid var(--grey);
   /* text-align: left; */
+  border-bottom: 1px solid var(--grey);
 }
 
 #table tr td {
   text-align: left;
-  font: 20px;
+  font-size: 20px;
   color: var(--grey);
   padding-top: 5px;
   font-weight: bold;
   padding-left: 50px;
-}
-/* Total-customer */
-#Total-Customer {
-  border: 1px solid;
-  height: 225px;
-  width: 250px;
-  margin-left: 25px;
-  border-radius: 10px;
-  background-color: var(--grey);
-  color: #fff;
-  border: none;
-  text-align: center;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-top: 25px;
-}
-#cus {
-  font-size: 45px;
-  margin-top: 28px;
 }
