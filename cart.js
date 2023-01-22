@@ -81,14 +81,15 @@ function displayCartImage(){
 `
 }
 
+let by=[]
 
-
+let checkData=JSON.parse(localStorage.getItem('checkdata'))||[]
 
 function displayAcctualItems(){
    
 let midText=document.createElement('p')
 midText.setAttribute('id','mid-text')
-fordisplayingMessage.innerHTML='Shopping Cart is Empty'
+fordisplayingMessage.innerHTML='Shopping Cart'
 middle.append(midText)
 
 window.addEventListener('load',()=>{
@@ -98,15 +99,14 @@ showData(localData)
 function showData(arrData){
 
    middle.innerHTML=''
-   count=0
-   ans=0
+  
    arrData.forEach((elem,ind)=> {
-     ans+=elem.price;
-     total_price.innerHTML="₹ "+ans+".00"
-     total_value.innerHTML="₹ "+ans+".00"
-     count++
-     total_count.innerHTML=count
-     total_item.innerHTML=count
+   //   ans+=elem.price;
+   //   total_price.innerHTML="₹ "+ans+".00"
+   //   total_value.innerHTML="₹ "+ans+".00"
+   //   count++
+   //   total_count.innerHTML=count
+   //   total_item.innerHTML=count
      
 
 
@@ -117,6 +117,60 @@ function showData(arrData){
        let checkbox=document.createElement('input')
        checkbox.setAttribute('type','checkbox')
        checkbox.setAttribute('id','checkbox')
+       checkbox.setAttribute("class","please")
+       //new part added========
+        checkbox.addEventListener('change', (event) => {
+         if (event.currentTarget.checked) {
+            checkData=JSON.parse(localStorage.getItem('checkdata'))||[]
+            checkData.push(elem)
+            localStorage.setItem('checkdata',JSON.stringify(checkData))
+            count=0
+            ans=0
+            checkData.forEach(element=>{
+                       ans+=element.price;
+                       total_price.innerHTML="₹ "+ans+".00"
+                       total_value.innerHTML="₹ "+ans+".00"
+                       count++
+                       total_count.innerHTML=count
+                       total_item.innerHTML=count
+                     })
+                         if(checkData.length==0){
+         //   middle.append(midText)
+           count=0
+           ans=0
+           total_count.innerHTML=count
+           total_item.innerHTML=count
+           total_price.innerHTML="₹ "+ans+".00"
+           total_value.innerHTML="₹ "+ans+".00"
+        }
+           
+         } else {
+            checkData=JSON.parse(localStorage.getItem('checkdata'))||[]
+            checkData.splice(ind,1)    
+            localStorage.setItem('checkdata',JSON.stringify(checkData))
+            count=0
+            ans=0
+            checkData.forEach(element=>{
+               ans+=element.price;
+               total_price.innerHTML="₹ "+ans+".00"
+               total_value.innerHTML="₹ "+ans+".00"
+               count++
+               total_count.innerHTML=count
+               total_item.innerHTML=count
+            })
+           if(checkData.length==0){
+         //   middle.append(midText)
+           count=0
+           ans=0
+           total_count.innerHTML=count
+           total_item.innerHTML=count
+           total_price.innerHTML="₹ "+ans+".00"
+           total_value.innerHTML="₹ "+ans+".00"
+        }
+
+         }
+         })  
+         //new end here======================       
        first.append(checkbox)
        //for second
        let second=document.createElement('div')
@@ -163,39 +217,88 @@ function showData(arrData){
        select.append(option1,option2,option3,option4,option5)
        let aN=document.createElement('a')
        aN.innerHTML='delete'                       //delete functionalities from here to
-       aN.addEventListener('click',()=>{
+       aN.addEventListener('click',(e)=>{
+         //new 
+         e.preventDefault()
+         checkData.splice(ind,1) 
+         localStorage.setItem('checkdata',JSON.stringify(checkData))
+         //==============================
+         count=0
+         ans=0
+         checkData.forEach(element=>{
+            ans+=element.price;
+            total_price.innerHTML="₹ "+ans+".00"
+            total_value.innerHTML="₹ "+ans+".00"
+            count++
+            total_count.innerHTML=count
+            total_item.innerHTML=count
+         })
+        if(checkData.length==0){
+      //   middle.append(midText)
+        count=0
+        ans=0
+        total_count.innerHTML=count
+        total_item.innerHTML=count
+        total_price.innerHTML="₹ "+ans+".00"
+        total_value.innerHTML="₹ "+ans+".00"
+     }
+         //=============================
         localData.splice(ind,1)
         localStorage.setItem('addcart',JSON.stringify(localData))
         showData(localData)
 
-        if(localData.length==0){
-           middle.append(midText)
-           count=0
-           ans=0
-           total_count.innerHTML=count
-           total_item.innerHTML=count
-           total_price.innerHTML="₹ "+ans+".00"
-           total_value.innerHTML="₹ "+ans+".00"
-        }
+      //   if(localData.length==0){
+      //      middle.append(midText)
+      //      count=0
+      //      ans=0
+      //      total_count.innerHTML=count
+      //      total_item.innerHTML=count
+      //      total_price.innerHTML="₹ "+ans+".00"
+      //      total_value.innerHTML="₹ "+ans+".00"
+      //   }
        })                                             //==========  till here
        let aN1=document.createElement('a')
        aN1.innerHTML='save for later'
-       aN1.addEventListener('click',()=>{           //save later funcitonalities from here 
+       aN1.addEventListener('click',(e)=>{           //save later funcitonalities from here
+         e.preventDefault()
+         checkData.splice(ind,1) 
+         localStorage.setItem('checkdata',JSON.stringify(checkData))
+         //==============================
+         count=0
+         ans=0
+         checkData.forEach(element=>{
+            ans+=element.price;
+            total_price.innerHTML="₹ "+ans+".00"
+            total_value.innerHTML="₹ "+ans+".00"
+            count++
+            total_count.innerHTML=count
+            total_item.innerHTML=count
+         })
+        if(checkData.length==0){
+      //   middle.append(midText)
+        count=0
+        ans=0
+        total_count.innerHTML=count
+        total_item.innerHTML=count
+        total_price.innerHTML="₹ "+ans+".00"
+        total_value.innerHTML="₹ "+ans+".00"
+     }
+         //=============================
         savelaterData.push(elem)
         localStorage.setItem('savelater',JSON.stringify(savelaterData))
         localData.splice(ind,1)
         localStorage.setItem('addcart',JSON.stringify(localData))
         showData(localData)
         saveData(savelaterData)
-        if(localData.length==0){
-           middle.append(midText)
-           count=0
-           ans=0
-           total_count.innerHTML=count
-           total_item.innerHTML=count
-           total_price.innerHTML="₹ "+ans+".00"
-           total_value.innerHTML="₹ "+ans+".00"
-        }
+      //   if(localData.length==0){
+      //      middle.append(midText)
+      //      count=0
+      //      ans=0
+      //      total_count.innerHTML=count
+      //      total_item.innerHTML=count
+      //      total_price.innerHTML="₹ "+ans+".00"
+      //      total_value.innerHTML="₹ "+ans+".00"
+      //   }
        })                                       //  ===till here
        let aN2=document.createElement('a')
        aN2.innerHTML='see more like this'
@@ -212,13 +315,37 @@ function showData(arrData){
        h3forth.innerHTML="₹ "+elem.price+".00"
        forth.append(h3forth)
 
-
        //final appending data
        main.append(first,second,third,forth)
        middle.append(main)
    });
 }
+//for checking part 
+// let please=document.getElementsByClassName('please')
+// console.log(please)
+// for(let e of please){
+//    e.addEventListener('click',(ed)=>{
+//       console.log('cikckc')
+//    if(ed.target.value==checked){
+//       console.log('hii')
+//       ans+=elem.price;
+//       total_price.innerHTML="₹ "+ans+".00"
+//       total_value.innerHTML="₹ "+ans+".00"
+//       count++
+//       total_count.innerHTML=count
+//       total_item.innerHTML=count
+//    }
+//    })
+//    // if(echecked){
+//    //    console.log('click')
+      
+//    //     }
+//    }
 
+let proceed=document.getElementById('proceed-button')
+proceed.addEventListener('click',()=>{
+       window.location.href='address.html'
+})
 
 //function for save for later data
 let counter=document.getElementById('counter')
@@ -245,7 +372,8 @@ function saveData(itemData){
      logoImg.setAttribute('src','https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png')
      let button=document.createElement('button')
      button.innerHTML='Move to cart'
-     button.addEventListener('click',()=>{ //move cart functionalities==========
+     button.addEventListener('click',(e)=>{ //move cart functionalities==========
+            e.preventDefault()
             localData.push(element)
             localStorage.setItem('addcart',JSON.stringify(localData))
             savelaterData.splice(index,1)
@@ -260,7 +388,8 @@ function saveData(itemData){
      let aDiv=document.createElement('div')
      let del=document.createElement('a')
      del.innerHTML='delete'
-     del.addEventListener('click',()=>{  //delete cart functionalities ==================
+     del.addEventListener('click',(e)=>{  //delete cart functionalities ==================
+         e.preventDefault()
         savelaterData.splice(index,1)
         localStorage.setItem('savelater',JSON.stringify(savelaterData))
         saveData(savelaterData)
